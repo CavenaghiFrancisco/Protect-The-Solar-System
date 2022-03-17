@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetRotation : MonoBehaviour
 {
     public Transform target;
-    public int speed;
+    public float speed;
 
     void Update()
     {
