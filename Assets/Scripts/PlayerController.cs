@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 lookInput, screenCenter, mouseDistance;
 
     public GameObject trail;
+    public GameObject trail2;
+
+    float smooth = 5.0f;
 
     private float rollInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
@@ -39,9 +42,9 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(mouseDistance.y * lookRateSpeed * Time.deltaTime * -1, mouseDistance.x * lookRateSpeed * Time.deltaTime, rollInput * rollSpeed * Time.deltaTime, Space.Self);
 
+
         if (Input.GetButton("Fire1"))
         {
-            trail.SetActive(true);
             if (speed < maxSpeed)
             {
                 trail.SetActive(true);
@@ -52,7 +55,6 @@ public class PlayerController : MonoBehaviour
         {
             if (speed > minSpeed)
             {
-                trail.SetActive(false);
                 speed -= 0.1f * Time.deltaTime;
             }
         }
