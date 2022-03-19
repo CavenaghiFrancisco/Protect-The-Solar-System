@@ -4,59 +4,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0.1f;
+    public float minMovementSpeed = 1f;
+    public float movementSpeed = 0.4f;
+    public float turnSpeed = 50f;
+    public AudioSource boostSound;
 
-    public float maxSpeed = 2f;
-    public float minSpeed = 0.1f;
-
-    public float lookRateSpeed = 90f;
-    private Vector2 lookInput, screenCenter, mouseDistance;
-
-    public GameObject trail;
-    public GameObject trail2;
-
-    float smooth = 5.0f;
-
-    private float rollInput;
-    public float rollSpeed = 90f, rollAcceleration = 3.5f;
-
-    void Start()
+    private void Update()
     {
-        screenCenter.x = Screen.width * 0.5f;
-        screenCenter.y = Screen.height * 0.5f;
+        Turn();
+        Thrust();
     }
 
-    void Update()
+    void Turn()
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
+        float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
+        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis("Pitch");
+        float roll = turnSpeed * Time.deltaTime * Input.GetAxis("Roll");
 
-        lookInput.x = Input.mousePosition.x;
-        lookInput.y = Input.mousePosition.y;
+        transform.Rotate(pitch, yaw, roll);
+    }
 
-        mouseDistance.x = (lookInput.x - screenCenter.x) / screenCenter.y;
-        mouseDistance.y = (lookInput.y - screenCenter.y) / screenCenter.y;
-
-        mouseDistance = Vector2.ClampMagnitude(mouseDistance, 1f);
-
-        rollInput = Mathf.Lerp(rollInput, Input.GetAxisRaw("Roll"), rollAcceleration * Time.deltaTime);
-
-        transform.Rotate(mouseDistance.y * lookRateSpeed * Time.deltaTime * -1, mouseDistance.x * lookRateSpeed * Time.deltaTime, rollInput * rollSpeed * Time.deltaTime, Space.Self);
-
-
-        if (Input.GetButton("Fire1"))
+    void Thrust()
+    {
+        if (Input.GetAxis("Vertical") > 0)
         {
-            if (speed < maxSpeed)
-            {
-                trail.SetActive(true);
-                speed += 0.1f * Time.deltaTime;
-            }
+            transform.position += transform.forward * movementSpeed * Time.deltaTime * Input.GetAxis("Vertical");
+            boostSound.volume = 0.3f;
         }
         else
         {
-            if (speed > minSpeed)
-            {
-                speed -= 0.1f * Time.deltaTime;
-            }
+            boostSound.volume = 0.1f;
         }
+        transform.position += transform.forward * minMovementSpeed * Time.deltaTime;
     }
 }
