@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
-    float distanceDamp = 0.1f;
+    [SerializeField] private Transform target;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private float distanceDamp = 0.1f;
 
     public Vector3 velocity = Vector3.one;
 

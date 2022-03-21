@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AsteroidGenerator : MonoBehaviour
 {
-    public Vector3 spawnRange;
-    public float amountToSpawn;
-    public GameObject asteroid;
-    public float startSafeRange;
-    private List<GameObject> objectsToPlace = new List<GameObject>();
+    [SerializeField] private Vector3 spawnRange;
+    [SerializeField] private float amountToSpawn;
+    [SerializeField] private GameObject asteroid;
+    [SerializeField] private float startSafeRange;
+    [SerializeField] private List<GameObject> objectsToPlace = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float minMovementSpeed = 1f;
-    public float movementSpeed = 0.4f;
-    public float turnSpeed = 50f;
-    public AudioSource boostSound;
+    [SerializeField] private float minMovementSpeed = 1f;
+    [SerializeField] private float movementSpeed = 0.4f;
+    [SerializeField] private float turnSpeed = 50f;
+    [SerializeField] private AudioSource boostSound;
 
     private void Update()
     {

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlanetRotation : MonoBehaviour
 {
-    public Transform target;
-    public float speed;
+    [SerializeField] private Transform target;
+    [SerializeField] private float speed;
 
     void Update()
     {

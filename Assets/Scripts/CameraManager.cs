@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField]GameObject[] cameras;
-    [SerializeField] int currentCamera;
-    [SerializeField] GameObject player;
-    [SerializeField] Text text;
-    [SerializeField]GameObject staticVideo;
-    [SerializeField] float seconds;
-    [SerializeField] bool startSeconds;
+    [SerializeField] private GameObject[] cameras;
+    [SerializeField] private int currentCamera;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Text text;
+    [SerializeField] private GameObject staticVideo;
+    [SerializeField] private float seconds;
+    [SerializeField] private bool startSeconds;
     // Start is called before the first frame update
     void Start()
     {
