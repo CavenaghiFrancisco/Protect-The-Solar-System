@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 0.4f;
     [SerializeField] private float turnSpeed = 50f;
     [SerializeField] private AudioSource boostSound;
+    [SerializeField] private GameManager GM;
 
     private void Update()
     {
@@ -36,5 +37,18 @@ public class PlayerController : MonoBehaviour
             boostSound.volume = 0.1f;
         }
         transform.position += transform.forward * minMovementSpeed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        StartCoroutine(ShowGameOver());
+    }
+
+    private IEnumerator ShowGameOver()
+    {
+        yield return new WaitForSeconds(1);
+        GM.SetInGame(false);
     }
 }
