@@ -434,8 +434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRange: {x: 60, y: 16, z: 16}
   amountToSpawn: 400
-  asteroid: {fileID: 8167773484805232274, guid: 18cc75e3edb004046b8a61dd2d6e384e, type: 3}
-  startSafeRange: 0
+  asteroid: {fileID: 3500666730031230471, guid: 8ec362640a033cf40bf7a09db17f1270, type: 3}
+  startSafeRange: 0.5
   objectsToPlace: []
 --- !u!4 &242394693
 Transform:
