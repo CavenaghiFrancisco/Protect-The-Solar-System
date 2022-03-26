@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject lose;
     [SerializeField] private bool inGame = true;
+    [SerializeField] private bool firstFrameLose;
 
     private void Update()
     {
@@ -20,6 +22,11 @@ public class GameManager : MonoBehaviour
         else
         {
             Time.timeScale = 0;
+            if (firstFrameLose == false)
+            {
+                firstFrameLose = true;
+                lose.SetActive(true);
+            }
         }
         
     }

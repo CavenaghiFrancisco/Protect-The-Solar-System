@@ -19,17 +19,17 @@ public class PlayerController : MonoBehaviour
     void Turn()
     {
         float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
-        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis("Pitch");
+        float pitch = turnSpeed * Time.deltaTime * Input.GetAxis("Vertical");
         float roll = turnSpeed * Time.deltaTime * Input.GetAxis("Roll");
 
-        transform.Rotate(pitch, yaw, roll);
+        transform.Rotate(-pitch, yaw, roll);
     }
 
     void Thrust()
     {
-        if (Input.GetAxis("Vertical") > 0)
+        if (Input.GetMouseButton(0))
         {
-            transform.position += transform.forward * movementSpeed * Time.deltaTime * Input.GetAxis("Vertical");
+            transform.position += transform.forward * movementSpeed * Time.deltaTime ;
             boostSound.volume = 0.3f;
         }
         else

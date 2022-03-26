@@ -11,10 +11,14 @@ public class Menu : MonoBehaviour
     [SerializeField] private AudioSource click;
 
 
-   public void Play() 
+   public void Play(int index) 
     {
         click.Play();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex == 0 ? 1 : 0);
+        SceneLoad.instance.LoadScene(index);
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     public void Credits()
