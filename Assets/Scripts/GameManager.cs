@@ -13,10 +13,13 @@ public class GameManager : MonoBehaviour
     {
         if (inGame)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+           if(Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
             {
-                Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-                menu.SetActive(!menu.activeSelf);
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                menu.SetActive(true);
+                Debug.Log("aparezco");
             }
         }
         else

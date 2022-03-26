@@ -9,11 +9,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnSpeed = 50f;
     [SerializeField] private AudioSource boostSound;
     [SerializeField] private GameManager GM;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bulletSpawn;
+    [SerializeField] private GameObject bulletSpawn2;
+    [SerializeField] private bool hasShooted;
+    [SerializeField] private GameObject playerView;
 
     private void Update()
     {
         Turn();
         Thrust();
+        Shoot();
     }
 
     void Turn()
@@ -39,11 +45,32 @@ public class PlayerController : MonoBehaviour
         transform.position += transform.forward * minMovementSpeed * Time.deltaTime;
     }
 
+    void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !hasShooted)
+        {
+            Vector3 bulletDir = (bulletSpawn2.transform.position - bulletSpawn.transform.position).normalized;
+            Instantiate(bullet, bulletSpawn.transform.position, Quaternion.LookRotation(bulletDir, Vector3.up));
+            hasShooted = true;
+            StartCoroutine(RestartShoot());
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        gameObject.transform.GetChild(1).gameObject.SetActive(true);
-        StartCoroutine(ShowGameOver());
+        if(collision.gameObject.tag != "Bullet")
+        {
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            playerView.SetActive(false);
+            StartCoroutine(ShowGameOver());
+        }
+    }
+
+    private IEnumerator RestartShoot()
+    {
+        yield return new WaitForSeconds(0.3f);
+        hasShooted = false;
     }
 
     private IEnumerator ShowGameOver()

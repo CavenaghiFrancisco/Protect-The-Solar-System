@@ -15,6 +15,8 @@ public class Menu : MonoBehaviour
     {
         click.Play();
         SceneLoad.instance.LoadScene(index);
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1;

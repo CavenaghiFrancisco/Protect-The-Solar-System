@@ -43,17 +43,12 @@ public class SceneLoad : MonoBehaviour
         } while (scene.progress < 0.9f);
 
         scene.allowSceneActivation = true;
-        StartCoroutine(PauseLoadScreen());
+        await Task.Delay(1000);
+        loaderCanvas.SetActive(false);
     }
 
     private void Update()
     {
         progressBar.fillAmount = Mathf.MoveTowards(progressBar.fillAmount, target, 3 * Time.deltaTime);
-    }
-
-    private IEnumerator PauseLoadScreen()
-    {
-        yield return new WaitForSeconds(1.5f);
-        loaderCanvas.SetActive(false);
     }
 }

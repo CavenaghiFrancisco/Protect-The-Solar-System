@@ -8,6 +8,7 @@ public class MPause : MonoBehaviour
     [SerializeField] private GameObject menu;
     [SerializeField] private AudioSource click;
 
+
     public void ReturnToMenu()
     {
         click.Play();
@@ -19,6 +20,16 @@ public class MPause : MonoBehaviour
     {
         click.Play();
         Time.timeScale = Time.timeScale == 1 ? 0 : 1;
+        if (Time.timeScale == 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         menu.SetActive(!menu.activeSelf);
     }
 
