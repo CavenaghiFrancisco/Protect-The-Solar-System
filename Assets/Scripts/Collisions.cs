@@ -20,7 +20,8 @@ public class Collisions : MonoBehaviour
 
     private IEnumerator DestroyAfterTime()
     {
-        yield return new WaitForSeconds(2);
+        AudioSource audio = gameObject.GetComponent<AudioSource>();
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }

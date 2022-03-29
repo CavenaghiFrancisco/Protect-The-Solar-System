@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 368282028}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &32829520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 77265358}
-  speed: 0.5
+  traslationSpeed: 0
 --- !u!114 &77265360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: 0.125
+  traslationSpeed: 0
 --- !u!23 &77265361
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 269996569}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &143263081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 269996569}
-  speed: 0.75
+  traslationSpeed: 0
 --- !u!114 &269996571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: 0.875
+  traslationSpeed: 0
 --- !u!23 &269996572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1081,7 +1081,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288369978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8981493, y: 5.405739, z: 1.8981493}
   m_Children: []
   m_Father: {fileID: 489861968}
@@ -1089,8 +1089,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -155}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -138}
+  m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &288369980
 MonoBehaviour:
@@ -1129,7 +1129,10 @@ MonoBehaviour:
 
     Left click - Accelerate
 
-    q/r - Rotate'
+    q/r - Rotate
+
+    Space
+    - Shoot'
 --- !u!222 &288369981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1187,7 +1190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1055568276}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &318677231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,7 +1347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 368282028}
-  speed: 0.75
+  traslationSpeed: 0
 --- !u!114 &368282030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1358,7 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: 0.75
+  traslationSpeed: 0
 --- !u!23 &368282031
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1456,7 +1459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 397312154}
-  speed: 1.875
+  traslationSpeed: 0
 --- !u!114 &397312156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: 0.375
+  traslationSpeed: 0
 --- !u!23 &397312157
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1647,7 +1650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 462566119}
-  speed: 6
+  traslationSpeed: 0
 --- !u!114 &462566121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,7 +1664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: 0.5
+  traslationSpeed: 0
 --- !u!1 &463399493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1804,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
@@ -2143,7 +2146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 652351000}
-  speed: -100
+  traslationSpeed: 0
 --- !u!114 &652351002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,7 +2160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: -1
+  traslationSpeed: 0
 --- !u!23 &652351003
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2388,7 +2391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 652351000}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &699238738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2702,7 +2705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 77265358}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &922391912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3294,7 +3297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1055568276}
-  speed: -4.75
+  traslationSpeed: 0
 --- !u!114 &1055568278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3308,7 +3311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: -0.25
+  traslationSpeed: 0
 --- !u!23 &1055568279
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3518,7 +3521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1529254317}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &1137277112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3674,7 +3677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1167642347}
-  speed: 81.5
+  traslationSpeed: 0
 --- !u!114 &1167642349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3688,7 +3691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 269996569}
-  speed: 12.5
+  traslationSpeed: 0
 --- !u!23 &1167642350
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3996,7 +3999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: 0.375
+  traslationSpeed: 0
 --- !u!114 &1474502279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4111,7 +4114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1529254317}
-  speed: 31.375
+  traslationSpeed: 0
 --- !u!114 &1529254319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,7 +4128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1474502276}
-  speed: 14.75
+  traslationSpeed: 0
 --- !u!23 &1529254320
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4224,7 +4227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 462566119}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &1589036894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,7 +5101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 397312154}
-  speed: 1
+  traslationSpeed: 0
 --- !u!114 &1979071762
 MonoBehaviour:
   m_ObjectHideFlags: 0
