@@ -62,11 +62,11 @@ public class CameraManager : MonoBehaviour
             cameras[currentCamera].SetActive(true);
             if(currentCamera != 0)
             {
-                player.SetActive(false);
+                player.GetComponent<PlayerController>().enabled = false;
             }
             else
             {
-                player.SetActive(true);
+                player.GetComponent<PlayerController>().enabled = true;
             }
         }
         switch (currentCamera)

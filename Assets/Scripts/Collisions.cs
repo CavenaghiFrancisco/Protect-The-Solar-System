@@ -13,15 +13,16 @@ public class Collisions : MonoBehaviour
         if(collision.gameObject.tag == "Bullet")
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
+            Collider col = gameObject.GetComponent<Collider>();
             audio.enabled = !audio.enabled;
+            col.enabled = !col.enabled;
         }
         StartCoroutine(DestroyAfterTime());
     }
 
     private IEnumerator DestroyAfterTime()
     {
-        AudioSource audio = gameObject.GetComponent<AudioSource>();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
 }

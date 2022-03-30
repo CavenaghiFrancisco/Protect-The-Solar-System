@@ -15,7 +15,7 @@ public class BulletProjectile : MonoBehaviour
     {
         float speed = 10f;
         bulletRigidbody.velocity = transform.forward * speed;
-        Destroy(gameObject, 6);
+        Destroy(gameObject, 3);
     }
 
     private void OnCollisionEnter(Collision collision)

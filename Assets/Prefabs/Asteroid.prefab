@@ -91,9 +91,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5705935280724582438}
   - component: {fileID: 1117602842451523162}
-  - component: {fileID: 7821159789507772293}
   - component: {fileID: 2744809421328976927}
   - component: {fileID: -6266918090951131167}
+  - component: {fileID: 5275452965866001415}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -129,20 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc699cf186da064895221011d9f78e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &7821159789507772293
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4928166441376905884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3292925553009838691, guid: 4ef4ac351ad776f44a3c057055f6c548, type: 3}
 --- !u!54 &2744809421328976927
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -255,6 +241,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &5275452965866001415
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928166441376905884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 324.9233
+  m_Center: {x: 0, y: 223.44707, z: -2.5025604}
 --- !u!1 &5276644674417064066
 GameObject:
   m_ObjectHideFlags: 0

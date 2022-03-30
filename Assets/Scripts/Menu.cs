@@ -7,7 +7,6 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject menu;
-    [SerializeField] private GameObject solarSystem;
     [SerializeField] private AudioSource click;
 
 
@@ -15,8 +14,6 @@ public class Menu : MonoBehaviour
     {
         click.Play();
         SceneLoad.instance.LoadScene(index);
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
@@ -28,7 +25,6 @@ public class Menu : MonoBehaviour
         click.Play();
         credits.SetActive(true);
         menu.SetActive(false);
-        solarSystem.SetActive(false);
     }
 
     public void ExitCredits()
@@ -36,7 +32,6 @@ public class Menu : MonoBehaviour
         click.Play();
         credits.SetActive(false);
         menu.SetActive(true);
-        solarSystem.SetActive(true);
     }
 
     public void QuitGame()

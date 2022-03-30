@@ -8,12 +8,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 0.4f;
     [SerializeField] private float turnSpeed = 50f;
     [SerializeField] private AudioSource boostSound;
-    [SerializeField] private GameManager GM;
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject bulletSpawn;
     [SerializeField] private GameObject bulletSpawn2;
     [SerializeField] private bool hasShooted;
-    [SerializeField] private GameObject playerView;
 
     private void Update()
     {
@@ -33,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Thrust()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetButton("Thrust"))
         {
             transform.position += transform.forward * movementSpeed * Time.deltaTime ;
             boostSound.volume = 0.3f;
@@ -47,23 +45,12 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !hasShooted)
+        if (Input.GetButtonDown("Shoot") && !hasShooted)
         {
             Vector3 bulletDir = (bulletSpawn2.transform.position - bulletSpawn.transform.position).normalized;
             Instantiate(bullet, bulletSpawn.transform.position, Quaternion.LookRotation(bulletDir, Vector3.up));
             hasShooted = true;
             StartCoroutine(RestartShoot());
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag != "Bullet")
-        {
-            gameObject.transform.GetChild(0).gameObject.SetActive(false);
-            gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            playerView.SetActive(false);
-            StartCoroutine(ShowGameOver());
         }
     }
 
@@ -73,9 +60,5 @@ public class PlayerController : MonoBehaviour
         hasShooted = false;
     }
 
-    private IEnumerator ShowGameOver()
-    {
-        yield return new WaitForSeconds(1);
-        GM.SetInGame(false);
-    }
+    
 }
