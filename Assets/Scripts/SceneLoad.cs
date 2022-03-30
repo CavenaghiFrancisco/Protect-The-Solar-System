@@ -43,7 +43,6 @@ public class SceneLoad : MonoBehaviour
         } while (scene.progress < 0.9f);
 
         scene.allowSceneActivation = true;
-        await Task.Delay(1000);
         loaderCanvas.SetActive(false);
     }
 

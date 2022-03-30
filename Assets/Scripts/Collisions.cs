@@ -10,13 +10,10 @@ public class Collisions : MonoBehaviour
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         gameObject.transform.GetChild(1).gameObject.SetActive(true);
-        if(collision.gameObject.tag == "Bullet")
-        {
-            AudioSource audio = gameObject.GetComponent<AudioSource>();
-            Collider col = gameObject.GetComponent<Collider>();
-            audio.enabled = !audio.enabled;
-            col.enabled = !col.enabled;
-        }
+        AudioSource audio = gameObject.GetComponent<AudioSource>();
+        Collider col = gameObject.GetComponent<Collider>();
+        audio.enabled = !audio.enabled;
+        col.enabled = !col.enabled;
         StartCoroutine(DestroyAfterTime());
     }
 
