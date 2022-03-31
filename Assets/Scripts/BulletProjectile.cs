@@ -20,6 +20,7 @@ public class BulletProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.name);
         if(collision.gameObject.tag != "Player")
             Destroy(gameObject);
     }

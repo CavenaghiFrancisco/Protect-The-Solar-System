@@ -23,6 +23,8 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private List<GameObject> aliensToDestroy;
     [SerializeField] private int typeOfMission; //0 is asteroid mission, 1 is planet mission
     [SerializeField] private List<AudioSource> audios;
+    [SerializeField] private int timeLapse;
+    [SerializeField] private GameObject highscore;
 
     void Start()
     {
@@ -60,6 +62,7 @@ public class MissionManager : MonoBehaviour
 
     private IEnumerator StartSimulation()
     {
+        float t1 = Time.time;
         yield return new WaitForSeconds(2);
         yield return PlayAudio(0);
         yield return AsteroidMission(0);
@@ -74,6 +77,12 @@ public class MissionManager : MonoBehaviour
         yield return AliensMission(planets[7], 3);
         UpdateGuideBeam(Vector3.zero, Vector3.zero);
         yield return new WaitForSeconds(2f);
+        float t2 = Time.time;
+        timeLapse = (int)t2 - (int)t1;
+        player.SetActive(false);
+        textBox.SetActive(false);
+        missionBox.SetActive(false);
+        highscore.SetActive(true);
     }
 
     private IEnumerator AsteroidMission(int numberOfMission)
@@ -190,6 +199,12 @@ public class MissionManager : MonoBehaviour
                 text.text = "The aliens are attacking the planet Saturn. Finish them off";
                 break;
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
+
+    }
+
+    public int GetScore()
+    {
+        return timeLapse;
     }
 }
