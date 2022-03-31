@@ -13,10 +13,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletSpawn2;
     [SerializeField] private bool hasShooted;
 
+    private void Start()
+    {
+        boostSound.Play();
+    }
+
     private void Update()
     {
         Turn();
         Thrust();
+    }
+
+    private void LateUpdate()
+    {
         Shoot();
     }
 
@@ -45,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetButtonDown("Shoot") && !hasShooted)
+        if (Input.GetButton("Shoot") && !hasShooted)
         {
             Vector3 bulletDir = (bulletSpawn2.transform.position - bulletSpawn.transform.position).normalized;
             Instantiate(bullet, bulletSpawn.transform.position, Quaternion.LookRotation(bulletDir, Vector3.up));
@@ -56,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator RestartShoot()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         hasShooted = false;
     }
 }

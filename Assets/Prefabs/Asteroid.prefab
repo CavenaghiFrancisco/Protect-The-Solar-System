@@ -59,6 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 90fcd6b6f470f674383c80fed5ba29f7, type: 2}
   - {fileID: 2100000, guid: 744bc5acaab6b7048877fa9d2eac053b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -96,7 +97,7 @@ GameObject:
   - component: {fileID: 5275452965866001415}
   m_Layer: 0
   m_Name: Asteroid
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

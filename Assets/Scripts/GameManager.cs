@@ -8,12 +8,32 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject lose;
     [SerializeField] private bool inGame = true;
     [SerializeField] private bool firstFrameLose;
+    [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject[] planets;
+
+    private void Start()
+    {
+        foreach (GameObject planet in planets)
+        {
+            planet.GetComponent<SphereCollider>().radius = planet.GetComponent<SphereCollider>().radius + 0.2f;
+            if(planet.gameObject.name == "Planet")
+            {
+                planet.GetComponent<SphereCollider>().radius = 0.02f;
+            }
+        }
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.AddComponent<EnemySpawner>();
+        }
+        Time.timeScale = 100;
+
+    }
 
     private void Update()
     {
         if (inGame)
         {
-           if(Input.GetKeyDown(KeyCode.Escape) && Time.timeScale == 1)
+           if(Input.GetButtonDown("Pause") && Time.timeScale == 1)
             {
                 Time.timeScale = 0;
                 Cursor.lockState = CursorLockMode.None;
