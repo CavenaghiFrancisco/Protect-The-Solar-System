@@ -83,6 +83,8 @@ public class MissionManager : MonoBehaviour
         textBox.SetActive(false);
         missionBox.SetActive(false);
         highscore.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private IEnumerator AsteroidMission(int numberOfMission)
