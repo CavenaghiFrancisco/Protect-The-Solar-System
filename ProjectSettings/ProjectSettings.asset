@@ -46,6 +46,8 @@ PlayerSettings:
     duration: 3
   - logo: {fileID: 21300000, guid: 22579b9d5c0fed748b5d0c40c5c27d2a, type: 3}
     duration: 3
+  - logo: {fileID: 21300000, guid: 91a08dbe2fa14f2489dd7ed92f7c4d56, type: 3}
+    duration: 3
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1280
@@ -152,7 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.SolarSystem
+    Standalone: com.AlphaWolfStudios.ProtectTheSolarSystem
   buildNumber:
     Standalone: 0
     iPhone: 0

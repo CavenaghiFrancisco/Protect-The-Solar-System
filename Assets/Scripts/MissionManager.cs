@@ -25,6 +25,7 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private List<AudioSource> audios;
     [SerializeField] private int timeLapse;
     [SerializeField] private GameObject highscore;
+    [SerializeField] private GameObject playerView;
 
     void Start()
     {
@@ -82,9 +83,9 @@ public class MissionManager : MonoBehaviour
         player.SetActive(false);
         textBox.SetActive(false);
         missionBox.SetActive(false);
+        playerView.SetActive(false);
         highscore.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Time.timeScale = 0;
     }
 
     private IEnumerator AsteroidMission(int numberOfMission)

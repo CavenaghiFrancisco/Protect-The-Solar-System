@@ -33,16 +33,6 @@ public class CanvasGame : MonoBehaviour
     {
         click.Play();
         Time.timeScale = Time.timeScale == 1 ? 0 : 1;
-        if (Time.timeScale == 0)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
         menu.SetActive(!menu.activeSelf);
     }
 
@@ -69,7 +59,6 @@ public class CanvasGame : MonoBehaviour
         gameObject.transform.GetChild(4).gameObject.SetActive(false);
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         missionObject.SetActive(true);
-
     }
 
     private IEnumerator Countdown(float t)

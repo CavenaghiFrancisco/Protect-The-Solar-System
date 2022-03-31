@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
            if(Input.GetButtonDown("Pause") && Time.timeScale == 1)
             {
                 Time.timeScale = 0;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
                 menu.SetActive(true);
                 Debug.Log("aparezco");
             }
